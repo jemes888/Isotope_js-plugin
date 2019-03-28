@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+      
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>jQuery UI</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+      <div class="row">
+      	<div class="col-lg-12">
+      		<div class="filter text-center">
+	      		<div class="button-group filter-button-group">
+				  <button class="btn btn-primary" data-filter="*">show all</button>
+				  <button class="btn btn-secondary" data-filter=".beach">Beach</button>
+				  <button class="btn btn-success" data-filter=".cloud">Cloud</button>
+				  <button class="btn btn-danger" data-filter=".image">Image</button>
+				  <button class="btn btn-warning" data-filter=".summer">Summer</button>
+				  <button class="btn btn-info" data-filter=".sunrise">Sunrise</button>
+				  <button class="btn btn-dark" data-filter=".sunset">Sunset</button>
+
+
+				  <!-- <button data-filter=".transition">transition</button>
+				  <button data-filter=".alkali, .alkaline-earth">alkali & alkaline-earth</button>
+				  <button data-filter=":not(.transition)">not transition</button>
+				  <button data-filter=".metal:not(.transition)">metal but not transition</button> -->
+				</div>
+			</div>
+      	</div>
+      </div>
+      <div class="row">
+      	<div class="col-lg-12">
+      		<div class="grid">
+			  <div class="grid-item beach"><img src="img/beach1.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item beach"><img src="img/beach2.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item beach"><img src="img/beach3.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item beach"><img src="img/beach4.jpg" alt="beach" class="img-fluid"></div>
+			  
+			  <div class="grid-item cloud"><img src="img/cloud1.jpg" alt="beach" class="img-fluid"></div>
+			  <!-- <div class="grid-item cloud"><img src="img/cloud2.jpg" alt="beach" class="img-fluid"></div> -->
+			  <!-- <div class="grid-item cloud"><img src="img/cloud3.jpg" alt="beach" class="img-fluid"></div> -->
+			  <div class="grid-item cloud"><img src="img/cloud4.jpg" alt="beach" class="img-fluid"></div>
+			  
+			  <div class="grid-item image"><img src="img/image_1.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item image"><img src="img/image_2.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item image"><img src="img/image_3.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item image"><img src="img/image_4.jpg" alt="beach" class="img-fluid"></div>
+			  
+			  <div class="grid-item summer"><img src="img/summer1.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item summer"><img src="img/summer2.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item summer"><img src="img/summer3.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item summer"><img src="img/summer4.jpg" alt="beach" class="img-fluid"></div>
+			  
+			  <div class="grid-item sunrise"><img src="img/sunrise.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item sunrise"><img src="img/sunrise1.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item sunrise"><img src="img/sunrise2.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item sunrise"><img src="img/sunrise3.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item sunrise"><img src="img/sunrise4.jpg" alt="beach" class="img-fluid"></div>
+			  
+			  <div class="grid-item sunset"><img src="img/sunset2.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item sunset"><img src="img/sunset3.jpg" alt="beach" class="img-fluid"></div>
+			  <div class="grid-item sunset"><img src="img/sunset5.jpg" alt="beach" class="img-fluid"></div>
+			  
+			 
+			</div>
+      	</div>
+      </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  	<script>
+  		var $grid = $('.grid').isotope({
+		  // options
+		  itemSelector: '.grid-item',
+		  layoutMode: 'fitRows'
+		});
+  		$('.filter-button-group').on( 'click', 'button', function() {
+		  var filterValue = $(this).attr('data-filter');
+		  $grid.isotope({ filter: filterValue });
+		});
+
+		 
+  	</script>
+  </body>
+</html>
